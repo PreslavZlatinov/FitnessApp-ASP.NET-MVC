@@ -15,5 +15,9 @@ namespace FitnessApp_PreslavZlatinov_19621621.Models
         public string Name { get; set; }
 
         public string Description { get; set; }
+
+        //Relationships
+
+        public List<Workout> Workouts { get; set;}
     }
 }
