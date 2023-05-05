@@ -17,7 +17,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         public async Task<IActionResult> Index()
         {
             var allSponsors = await _context.Sponsors.ToListAsync();
-            return View();
+            return View(allSponsors);
         }
     }
 }

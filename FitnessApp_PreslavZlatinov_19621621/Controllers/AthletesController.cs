@@ -16,7 +16,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         public IActionResult Index()
         {
             var data = _context.Athletes.ToList();
-            return View();
+            return View(data);
         }
     }
 }

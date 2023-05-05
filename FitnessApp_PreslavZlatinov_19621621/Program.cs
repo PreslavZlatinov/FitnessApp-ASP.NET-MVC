@@ -2,7 +2,6 @@ using FitnessApp_PreslavZlatinov_19621621.Data;
 //using FitnessApp_PreslavZlatinov_19621621.Data.Cart;
 //using FitnessApp_PreslavZlatinov_19621621.Data.Services;
 using FitnessApp_PreslavZlatinov_19621621.Models;
-using FitnessApp_PreslavZlatinov_19621621.Data;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Cors.Infrastructure;

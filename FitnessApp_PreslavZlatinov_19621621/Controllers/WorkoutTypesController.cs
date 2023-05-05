@@ -16,7 +16,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         public async Task<IActionResult> Index()
         {
             var allWorkoutTypes = await _context.WorkoutTypes.ToListAsync();
-            return View();
+            return View(allWorkoutTypes);
         }
     }
 }
