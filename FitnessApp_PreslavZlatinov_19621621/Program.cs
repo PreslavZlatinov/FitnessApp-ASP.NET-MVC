@@ -19,7 +19,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 
 //Services configuration
 builder.Services.AddScoped<IAthletesService, AthletesService>();
-//builder.Services.AddScoped<IProducersService, ProducersService>();
+builder.Services.AddScoped<ISponsorsService, SponsorsService>();
 //builder.Services.AddScoped<ICinemasService, CinemasService>();
 //builder.Services.AddScoped<IMoviesService, MoviesService>();
 //builder.Services.AddScoped<IOrdersService, OrdersService>();
