@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FitnessApp_PreslavZlatinov_19621621.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FitnessApp_PreslavZlatinov_19621621.Models
 {
-    public class Athlete
+    public class Athlete:IEntityBase
     {
         [Key]
         public int Id { get; set; }
