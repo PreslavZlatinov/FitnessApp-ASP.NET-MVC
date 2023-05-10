@@ -1,4 +1,5 @@
-﻿using FitnessApp_PreslavZlatinov_19621621.Data.Enums;
+﻿using FitnessApp_PreslavZlatinov_19621621.Data.Base;
+using FitnessApp_PreslavZlatinov_19621621.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FitnessApp_PreslavZlatinov_19621621.Models
 {
-    public class Workout
+    public class Workout:IEntityBase
     {
         [Key]
         public int Id { get; set; }

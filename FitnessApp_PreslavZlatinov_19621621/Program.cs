@@ -21,7 +21,7 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(buil
 builder.Services.AddScoped<IAthletesService, AthletesService>();
 builder.Services.AddScoped<ISponsorsService, SponsorsService>();
 builder.Services.AddScoped<IWorkoutTypesService, WorkoutTypesService>();
-//builder.Services.AddScoped<IMoviesService, MoviesService>();
+builder.Services.AddScoped<IWorkoutsService, WorkoutsService>();
 //builder.Services.AddScoped<IOrdersService, OrdersService>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

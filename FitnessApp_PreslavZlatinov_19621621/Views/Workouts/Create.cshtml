@@ -1,0 +1,98 @@
+﻿@model NewWorkoutVM
+@using FitnessApp_PreslavZlatinov_19621621.Data.Enums
+@{
+    ViewData["Title"] = "Create a new workout";
+}
+
+<div class="row">
+    <div class="col-md-8 offset-2">
+        <p>
+            <h4>Create a new workout</h4>
+        </p>
+        <div class="row">
+            <div class="col-md-8 offset-2">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control"/>
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Days" class="control-label"></label>
+                                <input asp-for ="Days" class="form-control"/>
+                                <span asp-validation-for="Days" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Goal" class="control-label"></label>
+                                <input asp-for ="Goal" class="form-control"/>
+                                <span asp-validation-for="Goal" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Price" class="control-label"></label>
+                                <input asp-for ="Price" class="form-control"/>
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="ImageURL" class="control-label"></label>
+                                <input asp-for ="ImageURL" class="form-control"/>
+                                <span asp-validation-for="ImageURL" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div action="col-md-6">
+                            <div class="form-group">
+                                <label asp-for="WorkoutId" class="control-label"></label>
+                                <select asp-for="WorkoutId" class="form-control" asp-items="ViewBag.WorkoutId"></select>
+                                <span asp-validation-for="WorkoutId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="WorkoutExperience" class="control-label"></label>
+                                <select asp-for="WorkoutExperience" class="form-control" asp-items="Html.GetEnumSelectList<WorkoutExperience>()"></select>
+                                <span asp-validation-for="WorkoutExperience" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SponsorId" class="control-label"></label>
+                                <select asp-for="SponsorId" class="form-control" asp-items="ViewBag.SponsorId"></select>
+                                <span asp-validation-for="SponsorId" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="AthleteIds" class="control-label"></label>
+                                <select asp-for="AthleteIds" class="form-control" asp-items="ViewBag.AthleteIds" multiple></select>
+                                <span asp-validation-for="AthleteIds" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                <textarea asp-for="Description" class="form-control"></textarea>
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 offset-4 text-center">
+                        <img width="100%" id="ImageURLPreview" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-outline-success float-right"/>
+                        <a class="btn btn-outline-secondary" asp-action="Index">Show all</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $("#ImageURL").on("change", function () {
+            var output = document.getElementById("ImageURLPreview");
+            output.src = $(this).val();
+        })
+    </script>
+}                            
