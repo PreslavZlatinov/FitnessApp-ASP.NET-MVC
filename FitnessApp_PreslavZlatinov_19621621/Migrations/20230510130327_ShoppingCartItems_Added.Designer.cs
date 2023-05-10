@@ -3,6 +3,7 @@ using FitnessApp_PreslavZlatinov_19621621.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitnessApp_PreslavZlatinov_19621621.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230510130327_ShoppingCartItems_Added")]
+    partial class ShoppingCartItems_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,6 +103,9 @@ namespace FitnessApp_PreslavZlatinov_19621621.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<int>("WorkId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WorkoutId")
                         .HasColumnType("int");
 
@@ -107,7 +113,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("WorkoutId");
+                    b.HasIndex("WorkId");
 
                     b.ToTable("OrderItems");
                 });
@@ -264,7 +270,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Migrations
 
                     b.HasOne("FitnessApp_PreslavZlatinov_19621621.Models.Workout", "Workout")
                         .WithMany()
-                        .HasForeignKey("WorkoutId")
+                        .HasForeignKey("WorkId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -62,7 +62,7 @@
                                 <a class="btn btn-outline-primary float-right" asp-action="Index">
                                     Back to List
                                 </a>
-                                <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddModelToShoppingCart" asp-route-id="@Model.Id">
+                            <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@Model.Id">
                                     Add to Cart (Price @Model.Price.ToString("c"))
                                 </a>
                             </p>

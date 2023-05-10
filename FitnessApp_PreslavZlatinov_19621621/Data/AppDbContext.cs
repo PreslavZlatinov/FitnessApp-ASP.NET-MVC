@@ -34,5 +34,10 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
         public DbSet<WorkoutType> WorkoutTypes { get; set; }
 
         public DbSet<Sponsor> Sponsors { get; set; }
+
+        //Orders related tables
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 using FitnessApp_PreslavZlatinov_19621621.Data;
 using FitnessApp_PreslavZlatinov_19621621.Data.Services;
-//using FitnessApp_PreslavZlatinov_19621621.Data.Cart;
+using FitnessApp_PreslavZlatinov_19621621.Data.Cart;
 using FitnessApp_PreslavZlatinov_19621621.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -22,10 +22,10 @@ builder.Services.AddScoped<IAthletesService, AthletesService>();
 builder.Services.AddScoped<ISponsorsService, SponsorsService>();
 builder.Services.AddScoped<IWorkoutTypesService, WorkoutTypesService>();
 builder.Services.AddScoped<IWorkoutsService, WorkoutsService>();
-//builder.Services.AddScoped<IOrdersService, OrdersService>();
+builder.Services.AddScoped<IOrdersService, OrdersService>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-//builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+builder.Services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
 
 //Authentication and authorization
 //builder.Services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();

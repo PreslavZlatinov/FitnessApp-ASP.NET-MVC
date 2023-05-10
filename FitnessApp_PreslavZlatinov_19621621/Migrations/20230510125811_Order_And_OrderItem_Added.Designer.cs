@@ -3,6 +3,7 @@ using FitnessApp_PreslavZlatinov_19621621.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FitnessApp_PreslavZlatinov_19621621.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230510125811_Order_And_OrderItem_Added")]
+    partial class Order_And_OrderItem_Added
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -100,6 +103,9 @@ namespace FitnessApp_PreslavZlatinov_19621621.Migrations
                     b.Property<double>("Price")
                         .HasColumnType("float");
 
+                    b.Property<int>("WorkId")
+                        .HasColumnType("int");
+
                     b.Property<int>("WorkoutId")
                         .HasColumnType("int");
 
@@ -107,34 +113,9 @@ namespace FitnessApp_PreslavZlatinov_19621621.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("WorkoutId");
+                    b.HasIndex("WorkId");
 
                     b.ToTable("OrderItems");
-                });
-
-            modelBuilder.Entity("FitnessApp_PreslavZlatinov_19621621.Models.ShoppingCartItem", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Amount")
-                        .HasColumnType("int");
-
-                    b.Property<string>("ShoppingCartId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("WorkoutId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("WorkoutId");
-
-                    b.ToTable("ShoppingCartItems");
                 });
 
             modelBuilder.Entity("FitnessApp_PreslavZlatinov_19621621.Models.Sponsor", b =>
@@ -264,22 +245,11 @@ namespace FitnessApp_PreslavZlatinov_19621621.Migrations
 
                     b.HasOne("FitnessApp_PreslavZlatinov_19621621.Models.Workout", "Workout")
                         .WithMany()
-                        .HasForeignKey("WorkoutId")
+                        .HasForeignKey("WorkId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Order");
-
-                    b.Navigation("Workout");
-                });
-
-            modelBuilder.Entity("FitnessApp_PreslavZlatinov_19621621.Models.ShoppingCartItem", b =>
-                {
-                    b.HasOne("FitnessApp_PreslavZlatinov_19621621.Models.Workout", "Workout")
-                        .WithMany()
-                        .HasForeignKey("WorkoutId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
 
                     b.Navigation("Workout");
                 });
