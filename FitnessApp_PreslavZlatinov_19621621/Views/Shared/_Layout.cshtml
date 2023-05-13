@@ -20,20 +20,23 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Workouts" asp-action="Index"> Workouts</a>
-                        </li>
-                        <li>
-                            <a class="nav-link text-dark" asp-controller="WorkoutTypes" asp-action="Index"> Workout Types</a>
-                        </li>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Workouts" asp-action="Index"> Workouts</a>
+                            </li>
+                            <li>
+                                <a class="nav-link text-dark" asp-controller="WorkoutTypes" asp-action="Index"> Workout Types</a>
+                            </li>
 
-                        <li>
-                            <a class="nav-link text-dark" asp-controller="Sponsors" asp-action="Index"> Sponsors</a>
-                        </li>
+                            <li>
+                                <a class="nav-link text-dark" asp-controller="Sponsors" asp-action="Index"> Sponsors</a>
+                            </li>
 
-                        <li>
-                            <a class="nav-link text-dark" asp-controller="Athletes" asp-action="Index"> Athletes</a>
-                        </li>
+                            <li>
+                                <a class="nav-link text-dark" asp-controller="Athletes" asp-action="Index"> Athletes</a>
+                            </li>
+                        }
                     </ul>
 
                     <form class="form-inline my-2 my-lg-0" asp-controller="Workouts" asp-action="Filter" style="padding-right: 25px;">
@@ -45,19 +48,7 @@
                         @await Component.InvokeAsync("ShoppingCartSummary")
                     </ul>
 
-                    <div class="dropdown">
-                        <button class="btn btn-outline-success dropdown-toggle" type="button" id="profile-btn" data-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="bi bi-person-badge"></i>Hello
-                    </button>
-                        <ul class="dropdown-menu" aria-labelledby="profile-btn">
-                            <li>
-                                <a class="dropdown-item" asp-controller="Orders" asp-action="Index">
-                                    <i class="bi bi-list"></i>Orders</a>
-                            </li>
-                        </ul>
-                    </div>
-
+                    <partial name="_Identity.cshtml" />
                 </div>
             </div>
         </nav>

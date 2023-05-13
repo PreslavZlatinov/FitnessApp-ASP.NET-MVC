@@ -1,11 +1,13 @@
 ﻿using FitnessApp_PreslavZlatinov_19621621.Data.Cart;
 using FitnessApp_PreslavZlatinov_19621621.Data.Services;
 using FitnessApp_PreslavZlatinov_19621621.Data.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 namespace FitnessApp_PreslavZlatinov_19621621.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly IWorkoutsService _workoutsService;
@@ -21,8 +23,8 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
 
         public async Task<IActionResult> Index()
         {
-            string userId = "";
-            string userRole = "";
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userRole = User.FindFirstValue(ClaimTypes.Role);
 
             var orders = await _ordersService.GetOrdersByUserIdAndRoleAsync(userId, userRole);
             return View(orders);
@@ -67,8 +69,8 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         public async Task<IActionResult> CompleteOrder()
         {
             var items = _shoppingCart.GetShoppingCartItems();
-            string userId = "";
-            string userEmailAddress = "";
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            string userEmailAddress = User.FindFirstValue(ClaimTypes.Email);
 
             await _ordersService.StoreOrderAsync(items, userId, userEmailAddress);
             await _shoppingCart.ClearShoppingCartAsync();

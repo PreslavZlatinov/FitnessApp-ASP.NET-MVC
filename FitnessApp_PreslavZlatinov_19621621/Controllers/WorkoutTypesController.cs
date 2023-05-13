@@ -1,11 +1,15 @@
 ﻿using FitnessApp_PreslavZlatinov_19621621.Data;
 using FitnessApp_PreslavZlatinov_19621621.Data.Services;
+using FitnessApp_PreslavZlatinov_19621621.Data.Static;
 using FitnessApp_PreslavZlatinov_19621621.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace FitnessApp_PreslavZlatinov_19621621.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class WorkoutTypesController : Controller
     {
 
@@ -15,6 +19,8 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         {
             _service = service;
         }
+
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var allWorkoutTypes = await _service.GetAllAsync();
@@ -37,7 +43,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         }
 
         //GET: WorkoutTypes/Details/1
-
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var workoutTypeDetails = await _service.GetByIdAsync(id);

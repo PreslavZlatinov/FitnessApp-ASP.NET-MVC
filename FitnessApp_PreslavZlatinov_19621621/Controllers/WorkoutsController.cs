@@ -1,12 +1,16 @@
 ﻿using FitnessApp_PreslavZlatinov_19621621.Data;
 using FitnessApp_PreslavZlatinov_19621621.Data.Services;
+using FitnessApp_PreslavZlatinov_19621621.Data.Static;
 using FitnessApp_PreslavZlatinov_19621621.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace FitnessApp_PreslavZlatinov_19621621.Controllers
 {
+    [Authorize(Roles = UserRoles.Admin)]
     public class WorkoutsController : Controller
     {
 
@@ -17,12 +21,14 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
             _service = service;
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Index()
         {
             var allWorkouts = await _service.GetAllAsync(n => n.WorkoutType);
             return View(allWorkouts);
         }
 
+        [AllowAnonymous]
         public async Task<IActionResult> Filter(string searchString)
         {
             var allWorkouts = await _service.GetAllAsync(n => n.WorkoutType);
@@ -37,6 +43,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         }
 
         //GET: Workouts/Details/1
+        [AllowAnonymous]
         public async Task<IActionResult> Details(int id)
         {
             var workoutDetail = await _service.GetWorkoutByIdAsync(id);
