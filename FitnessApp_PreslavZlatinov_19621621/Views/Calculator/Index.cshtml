@@ -1,0 +1,201 @@
+﻿@{
+    ViewData["Title"] = "BMR Calculator";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #F0F0F0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+            .container legend {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .form-group input[type="text"],
+            .form-group input[type="radio"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 4px;
+                border: 1px solid #CCCCCC;
+            }
+
+            .form-group input[type="radio"] {
+                display: none;
+            }
+
+            .form-group input[type="button"],
+            .form-group input[type="reset"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 4px;
+                background-color: #4CAF50;
+                color: #FFFFFF;
+                border: none;
+                cursor: pointer;
+            }
+
+                .form-group input[type="button"]:hover,
+                .form-group input[type="reset"]:hover {
+                    background-color: #45a049;
+                }
+
+            .form-group input[type="text"][readonly] {
+                background-color: #F0F0F0;
+                cursor: not-allowed;
+            }
+
+        .gender-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .gender-container label {
+                position: relative;
+                padding-left: 30px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+
+            .gender-container input[type="radio"] + span {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #CCCCCC;
+            }
+
+            .gender-container input[type="radio"]:checked + span {
+                background-color: #4CAF50;
+            }
+
+            .gender-container input[type="radio"] + span:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #FFFFFF;
+                opacity: 0;
+            }
+
+            .gender-container input[type="radio"]:checked + span:after {
+                opacity: 1;
+            }
+
+        .alert {
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="#" name="bmrform">
+            <fieldset>
+                <legend>BMR Calculator</legend>
+                <div class="form-group">
+                    <label for="weight">Enter Weight in Kgs:</label>
+                    <input type="text" id="weight" value="" placeholder="Enter Weight in Kgs" name="weight" required />
+                </div>
+                <div class="form-group">
+                    <label for="height">Enter Height in Cms:</label>
+                    <input type="text" id="height" value="" placeholder="Enter Height in Cms" name="height" required />
+                </div>
+                <div class="form-group">
+                    <label for="age">Enter Age:</label>
+                    <input type="text" id="age" value="" placeholder="Enter Age" name="age" required />
+                </div>
+                <div class="form-group">
+                    <div class="gender-container">
+                        <label for="gender-male">
+                            <input type="radio" id="gender-male" name="gender" value="male" required />
+                            <span></span>
+                            Male
+                        </label>
+                        <label for="gender-female">
+                            <input type="radio" id="gender-female" name="gender" value="female" required />
+                            <span></span>
+                            Female
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="reset" value="Reset" />
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Calculate BMR" onclick="calcBMR()" id="calc" />
+                </div>
+                <div class="form-group">
+                    <label for="result">BMR:</label>
+                    <input type="text" value="" size="20" placeholder="Result - BMR" id="result" readonly />
+                </div>
+                <div class="alert" id="alert-message"></div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+        function calcBMR() {
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+            var age = parseFloat(document.getElementById("age").value);
+            var gender = document.querySelector('input[name="gender"]:checked');
+
+            if (!gender) {
+                document.getElementById("alert-message").innerText = "Please select a gender.";
+                return;
+            } else {
+                document.getElementById("alert-message").innerText = "";
+            }
+
+            var bmr;
+
+            if (gender.value === "male") {
+                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
+            } else if (gender.value === "female") {
+                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
+            }
+
+            document.getElementById("result").value = bmr.toFixed(2);
+        }
+    </script>
+</body>
+</html>

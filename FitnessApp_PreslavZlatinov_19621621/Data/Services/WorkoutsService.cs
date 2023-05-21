@@ -96,7 +96,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data.Services
             _context.Athletes_Workouts.RemoveRange(existingAthletesDb);
             await _context.SaveChangesAsync();
 
-            //Add Workoute Athletes
+            //Add Workout Athletes
             foreach (var athleteId in data.AthleteIds)
             {
                 var newAthleteWorkout = new Athlete_Workout()
