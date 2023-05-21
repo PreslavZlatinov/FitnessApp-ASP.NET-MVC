@@ -22,9 +22,13 @@ namespace FitnessApp_PreslavZlatinov_19621621.Models
 
         public string ImageURL { get; set; }
 
+        public Gender Gender { get; set; }
+
         public int Days { get; set; }
 
         public string Goal { get; set; }
+
+        public string Equipment { get; set; }
 
         public WorkoutExperience WorkoutExperience { get; set; }
 

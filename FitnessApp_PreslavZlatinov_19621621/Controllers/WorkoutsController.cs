@@ -36,7 +36,8 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
             if (!string.IsNullOrEmpty(searchString))
             {
                 var filteredResult = allWorkouts.Where(n => n.Name.ToLower().Contains(searchString.ToLower()) || 
-                n.Description.ToLower().Contains(searchString.ToLower())).ToList();
+                n.Description.ToLower().Contains(searchString.ToLower()) || 
+                n.Gender.ToString().ToLower().Contains(searchString.ToLower())).ToList();
 
                 //var filteredResult = allWorkouts.Where(n => string.Equals(n.Name, searchString, StringComparison.CurrentCultureIgnoreCase) ||
                 //string.Equals(n.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
@@ -99,8 +100,10 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
                 Description = workoutDetails.Description,
                 Price = workoutDetails.Price,
                 ImageURL = workoutDetails.ImageURL,
+                Gender = workoutDetails.Gender,
                 Days = workoutDetails.Days,
                 Goal = workoutDetails.Goal,
+                Equipment = workoutDetails.Equipment,
                 WorkoutExperience = workoutDetails.WorkoutExperience,
                 WorkoutId = workoutDetails.WorkoutId,
                 SponsorId = workoutDetails.SponsorId,

@@ -27,31 +27,31 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                         new WorkoutType()
                         {
                             Name = "Powerlifting",
-                            Logo = "https://upload.wikimedia.org/wikipedia/commons/0/05/IPF_World_Champion_Dean_Bowring_performing_the_three_Powerlifting_moves.jpg",
+                            Logo = "https://musclepit.com.au/wp-content/uploads/2021/08/powerlifting-4.jpg",
                             Description = "Powerlifting Description"
                         },
                         new WorkoutType()
                         {
                             Name = "Powerbuilding",
-                            Logo = "https://fitnessvolt.com/wp-content/uploads/2018/11/Ronnie-Coleman.jpg",
+                            Logo = "https://musclepit.com.au/wp-content/uploads/2021/08/powerlifting-3.jpg",
                             Description = "Powerbuilding Description"
                         },
                         new WorkoutType()
                         {
                             Name = "Bodybuilding",
-                            Logo = "https://upload.wikimedia.org/wikipedia/commons/0/05/Arnold_Schwarzenegger_1974.jpg",
+                            Logo = "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/306913732_448251797409596_7648187554695807179_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=ZmiyrFAkHgIAX-BPLAF&_nc_ht=scontent.fsof10-1.fna&oh=00_AfC888ge0s3MpSvDkaL8KgpYkVaJShmWo918iQL_Wxvc9w&oe=646F8F64",
                             Description = "Bodybuilding Description"
                         },
                         new WorkoutType()
                         {
                             Name = "Cardio",
-                            Logo = "https://upload.wikimedia.org/wikipedia/commons/3/33/Gym_Cardio_Area_Overlooking_Greenery.JPG",
+                            Logo = "https://gymkituk.com/media/magefan_blog/f2d5ea372f327df50a8d100b03b497ac_1_1_.jpg",
                             Description = "Cardio Description"
                         },
                         new WorkoutType()
                         {
                             Name = "Calisthenics",
-                            Logo = "https://www.urbanmovement.info/wp-content/uploads/2021/07/Streetworkout-3.jpg",
+                            Logo = "https://i.pinimg.com/originals/1e/7b/9f/1e7b9f2f455f25892ee7bcb809477a4a.jpg",
                             Description = "Calisthenics Description"
                         },
                     });
@@ -66,31 +66,31 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                         new Athlete()
                         {
                             FullName = "David Laid",
-                            ProfilePictureURL = "https://i.pinimg.com/originals/a3/5c/31/a35c31cd55b14b3cbb7dc951dc6dd8cc.jpg",
+                            ProfilePictureURL = "https://scontent.fsof10-1.fna.fbcdn.net/v/t1.6435-9/57572811_383221482519101_6746941306125156352_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9267fe&_nc_ohc=LsPBgub06YMAX8mfN5o&_nc_ht=scontent.fsof10-1.fna&oh=00_AfAThi-QnLYfeMjg7b08IJ8Mu16wwnbrRr1j3JAEAZRpBw&oe=6491AC53",
                             Bio = "David Laid Bio"
                         },
                         new Athlete()
                         {
                             FullName = "Jeff Nippard",
-                            ProfilePictureURL = "https://www.greatestphysiques.com/wp-content/uploads/2022/09/201134611_483207166237561_5502985738391641560_n.jpg",
+                            ProfilePictureURL = "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/311883472_669714404513712_6051454543349360057_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=b984Ig9ZZs8AX_ArMLB&_nc_oc=AQmQ4sl9uaIrCU9IITIE2G7vAJwb6X09o1wPpzdt8BupPM7K6VTuvixZ27y2PdKSHok&_nc_ht=scontent.fsof10-1.fna&oh=00_AfDpZBqNWGWgu4ugBe1SwToQa2jU0yy3OUQh6jBIRAONbg&oe=646EAD74",
                             Bio = "Jeff Nippard Bio"
                         },
                         new Athlete()
                         {
                             FullName = "Emil Krastev",
-                            ProfilePictureURL = "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/293329639_457661149698866_8568028763921487792_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=nNukb9vVeXIAX-TIkbO&_nc_ht=scontent.fsof10-1.fna&oh=00_AfBbjTge5fhngZEZqC00dgD3M2W9NbiW_jfLui8ScqGM3g&oe=645782B0",
+                            ProfilePictureURL = "https://scontent.fsof10-1.fna.fbcdn.net/v/t1.6435-9/49948677_2276902545918951_3462954013899620352_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=9267fe&_nc_ohc=8izqX_Wj3dMAX_ALaMg&_nc_ht=scontent.fsof10-1.fna&oh=00_AfBRSdm0TdWm7Nzt04SAmCzWnkLeKxAkSYNDACmZuRC8Tw&oe=64919EB1",
                             Bio = "Emil Krastev Bio"
                         },
                         new Athlete()
                         {
                             FullName = "Lexx Little",
-                            ProfilePictureURL = "https://tikkaykhan.com/wp-content/uploads/2022/10/Lexx-Little-Career-819x1024.jpg",
+                            ProfilePictureURL = "https://scontent.fsof10-1.fna.fbcdn.net/v/t1.6435-9/155056000_976904423129037_7131058702266364751_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a26aad&_nc_ohc=KGVbSdMLgVwAX9dTFSS&_nc_ht=scontent.fsof10-1.fna&oh=00_AfAUxXmc1SRFOykHgvcPH6BP9gAOCA2a8y8lSovhspQcqA&oe=64919CEA",
                             Bio = "Lexx Little Bio"
                         },
                         new Athlete()
                         {
                             FullName = "Chris Heria",
-                            ProfilePictureURL = "https://www.ilblast.it/wp/wp-content/uploads/2022/05/image-1-2.jpg",
+                            ProfilePictureURL = "https://scontent.fsof10-1.fna.fbcdn.net/v/t1.6435-9/131132465_3984095238321506_1689892389001539737_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a26aad&_nc_ohc=yJkgxaCvsdYAX-S2BgX&_nc_ht=scontent.fsof10-1.fna&oh=00_AfCFeIXh-b3k2ORaKa1TCqgwdDr4rOxey5nZ2Kigp3wPXQ&oe=6491B4D6",
                             Bio = "Chris Heria Bio"
                         },
                     });
@@ -105,7 +105,7 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                         new Sponsor()
                         {
                             Name = "Gymshark",
-                            Logo = "https://logos-world.net/wp-content/uploads/2022/01/Gymshark-Symbol.png",
+                            Logo = "https://cdn.shopify.com/s/files/1/0156/6146/files/gymshark_social_banner_1200x1200.jpg?v=1613146426",
                             Description = "Gymshark Description"
                         },
                         new Sponsor()
@@ -147,10 +147,12 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                             Description = "Powerbuilding System is created by David Laid",
                             Price = 59.99,
                             ImageURL = "https://cdn.shopify.com/s/files/1/0630/1794/3286/products/ThePowerbuildingSystem_grande.png?v=1669860465",
+                            Gender = Gender.Male,
                             Days = 6,
                             Goal = "Strength and Hypertrophy",
                             WorkoutId = 2,
                             SponsorId = 1,
+                            Equipment = "Barbell, Dumbbells, Squat Rack, Weights",
                             WorkoutExperience = WorkoutExperience.Advanced
                         },
                         new Workout()
@@ -159,10 +161,12 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                             Description = "The Essentials Program is created by Jeff Nippard",
                             Price = 49.99,
                             ImageURL = "https://cdn.shopify.com/s/files/1/0630/1794/3286/products/TheEssentialsProgram_grande.png?v=1669860475",
+                            Gender = Gender.Male,
                             Days = 5,
                             Goal = "Strength and Hypertrophy",
                             WorkoutId = 2,
                             SponsorId = 5,
+                            Equipment = "Barbell, Dumbbells, Squat Rack, Weights",
                             WorkoutExperience = WorkoutExperience.Intermediate
                         },
                         new Workout()
@@ -171,10 +175,12 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                             Description = "Upper Lower is created by Jeff Nippard",
                             Price = 39.99,
                             ImageURL = "https://cdn.shopify.com/s/files/1/0630/1794/3286/products/UpperLowerSizeandStrengthProgram_grande.png?v=1669860599",
+                            Gender = Gender.Male,
                             Days = 4,
                             Goal = "Muscle Building",
                             WorkoutId = 3,
                             SponsorId = 5,
+                            Equipment = "Barbell, Dumbbells, Squat Rack, Weights",
                             WorkoutExperience = WorkoutExperience.Advanced
                         },
                         new Workout()
@@ -183,10 +189,12 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                             Description = "Push Pull Legs is created by Jeff Nippard",
                             Price = 39.99,
                             ImageURL = "https://cdn.shopify.com/s/files/1/0630/1794/3286/products/Intermediate-AdvancedPushPullLegsHypertrophyProgram_grande.png?v=1669859625",
+                            Gender = Gender.Male,
                             Days = 5,
                             Goal = "Muscle Building",
                             WorkoutId = 3,
                             SponsorId = 3,
+                            Equipment = "Barbell, Dumbbells, Squat Rack, Weights",
                             WorkoutExperience = WorkoutExperience.Advanced
                         },
                         new Workout()
@@ -195,10 +203,12 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                             Description = "Bench Press is created by Jeff Nippard",
                             Price = 29.99,
                             ImageURL = "https://cdn.shopify.com/s/files/1/0630/1794/3286/products/BenchPressSpecializationProgram_grande.png?v=1669859158",
+                            Gender = Gender.Male,
                             Days = 5,
                             Goal = "Strength",
                             WorkoutId = 1,
                             SponsorId = 5,
+                            Equipment = "Barbell, Weights",
                             WorkoutExperience = WorkoutExperience.Athlete
                         },
                         new Workout()
@@ -207,10 +217,12 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data
                             Description = "Squat is created by Jeff Nippard",
                             Price = 19.90,
                             ImageURL = "https://cdn.shopify.com/s/files/1/0630/1794/3286/products/10WeekSquatSpecializationProgram_grande.png?v=1669859037",
+                            Gender = Gender.Male,
                             Days = 5,
                             Goal = "Strength",
                             WorkoutId = 1,
                             SponsorId = 5,
+                            Equipment = "Barbell, Squat Rack, Weights",
                             WorkoutExperience = WorkoutExperience.Advanced
                         }
                     });

@@ -30,9 +30,17 @@ namespace FitnessApp_PreslavZlatinov_19621621.Models
         [Required(ErrorMessage = "ImageURL is required")]
         public string ImageURL { get; set; }
 
+        [Display(Name = "Select a Gender")]
+        [Required(ErrorMessage = "Gender is required")]
+        public Gender Gender { get; set; }
+
         [Display(Name = "Workout Days")]
         [Required(ErrorMessage = "Workout Days are required")]
         public int Days { get; set; }
+
+        [Display(Name = "Equipment Needed")]
+        [Required(ErrorMessage = "Equipment is required")]
+        public string Equipment { get; set; }
 
         [Display(Name = "Workout Goal")]
         [Required(ErrorMessage = "Workout Goal is required")]

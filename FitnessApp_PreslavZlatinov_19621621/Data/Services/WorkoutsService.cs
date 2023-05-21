@@ -1,4 +1,5 @@
 ﻿using FitnessApp_PreslavZlatinov_19621621.Data.Base;
+using FitnessApp_PreslavZlatinov_19621621.Data.Enums;
 using FitnessApp_PreslavZlatinov_19621621.Data.ViewModels;
 using FitnessApp_PreslavZlatinov_19621621.Models;
 using Microsoft.EntityFrameworkCore;
@@ -22,8 +23,10 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data.Services
                 Description = data.Description,
                 Price = data.Price,
                 ImageURL = data.ImageURL,
+                Gender = data.Gender,
                 Days = data.Days,
                 Goal = data.Goal,
+                Equipment = data.Equipment,
                 WorkoutExperience = data.WorkoutExperience,
                 WorkoutId = data.WorkoutId,
                 SponsorId = data.SponsorId
@@ -77,8 +80,10 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data.Services
                 dbWorkout.Description = data.Description;
                 dbWorkout.Price = data.Price;
                 dbWorkout.ImageURL = data.ImageURL;
+                dbWorkout.Gender = data.Gender;
                 dbWorkout.Days = data.Days;
                 dbWorkout.Goal = data.Goal;
+                dbWorkout.Equipment = data.Equipment;
                 dbWorkout.WorkoutExperience = data.WorkoutExperience;
                 dbWorkout.WorkoutId = data.WorkoutId;
                 dbWorkout.SponsorId = data.SponsorId;
