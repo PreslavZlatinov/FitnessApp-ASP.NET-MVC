@@ -36,7 +36,7 @@
                 margin-bottom: 5px;
             }
 
-            .form-group input[type="text"],
+            .form-group input[type="number"],
             .form-group input[type="radio"] {
                 width: 100%;
                 padding: 10px;
@@ -68,6 +68,10 @@
                 }
 
             .form-group input[type="text"][readonly] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 4px;
                 background-color: #F0F0F0;
                 cursor: not-allowed;
             }
@@ -133,15 +137,15 @@
                 <legend>BMR Calculator</legend>
                 <div class="form-group">
                     <label for="weight">Enter Weight in Kgs:</label>
-                    <input type="text" id="weight" value="" placeholder="Enter Weight in Kgs" name="weight" required />
+                    <input type="number" id="weight" value="" placeholder="Enter Weight in Kgs" name="weight" required />
                 </div>
                 <div class="form-group">
                     <label for="height">Enter Height in Cms:</label>
-                    <input type="text" id="height" value="" placeholder="Enter Height in Cms" name="height" required />
+                    <input type="number" id="height" value="" placeholder="Enter Height in Cms" name="height" required />
                 </div>
                 <div class="form-group">
                     <label for="age">Enter Age:</label>
-                    <input type="text" id="age" value="" placeholder="Enter Age" name="age" required />
+                    <input type="number" id="age" value="" placeholder="Enter Age" name="age" required />
                 </div>
                 <div class="form-group">
                     <div class="gender-container">
@@ -174,28 +178,42 @@
 
     <script>
         function calcBMR() {
-            var weight = parseFloat(document.getElementById("weight").value);
-            var height = parseFloat(document.getElementById("height").value);
-            var age = parseFloat(document.getElementById("age").value);
-            var gender = document.querySelector('input[name="gender"]:checked');
+            var weightInput = document.getElementById("weight");
+            var heightInput = document.getElementById("height");
+            var ageInput = document.getElementById("age");
+            var genderInput = document.querySelector('input[name="gender"]:checked');
+            var resultField = document.getElementById("result");
+            var alertMessage = document.getElementById("alert-message");
 
-            if (!gender) {
-                document.getElementById("alert-message").innerText = "Please select a gender.";
+            // Reset alert message
+            alertMessage.innerText = "";
+
+            // Check if any of the fields are not populated
+            if (!weightInput.value || !heightInput.value || !ageInput.value) {
+                alertMessage.innerText = "Please fill in all the required fields.";
                 return;
-            } else {
-                document.getElementById("alert-message").innerText = "";
             }
 
+            if (!genderInput) {
+                document.getElementById("alert-message").innerText = "Please select a gender.";
+                return;
+            }
+
+            var weight = parseFloat(weightInput.value);
+            var height = parseFloat(heightInput.value);
+            var age = parseFloat(ageInput.value);
+            var gender = genderInput.value;
             var bmr;
 
-            if (gender.value === "male") {
+            if (gender === "male") {
                 bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
-            } else if (gender.value === "female") {
+            } else if (gender === "female") {
                 bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
             }
 
-            document.getElementById("result").value = bmr.toFixed(2);
+            resultField.value = bmr.toFixed(2);
         }
     </script>
+
 </body>
 </html>

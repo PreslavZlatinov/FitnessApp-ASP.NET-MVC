@@ -8,5 +8,10 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
         {
             return View();
         }
+
+        public IActionResult IndexMacros()
+        {
+            return View();
+        }
     }
 }

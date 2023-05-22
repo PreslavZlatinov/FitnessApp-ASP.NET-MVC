@@ -1,0 +1,171 @@
+﻿@{
+    ViewData["Title"] = "Macros Calculator";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #F0F0F0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+            .container legend {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+
+            .form-group input[type="number"],
+            .form-group input[type="radio"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 4px;
+                border: 1px solid #CCCCCC;
+            }
+
+            .form-group input[type="radio"] {
+                display: none;
+            }
+
+            .form-group input[type="button"],
+            .form-group input[type="reset"] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                border-radius: 4px;
+                background-color: #4CAF50;
+                color: #FFFFFF;
+                border: none;
+                cursor: pointer;
+            }
+
+                .form-group input[type="button"]:hover,
+                .form-group input[type="reset"]:hover {
+                    background-color: #45a049;
+                }
+
+            .form-group input[type="text"][readonly] {
+                width: 100%;
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 4px;
+                background-color: #F0F0F0;
+                cursor: not-allowed;
+            }
+
+        .alert {
+            color: red;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form method="post" action="#" name="macrosform">
+            <fieldset>
+                <legend>Macros Calculator</legend>
+                <div class="form-group">
+                    <label for="calories">Calories:</label>
+                    <input type="number" id="calories" value="" placeholder="Enter your calories" name="calories" required />
+                </div>
+                <div class="form-group">
+                    <label for="carbs">Carbohydrates %:</label>
+                    <input type="number" id="carbs" value="" placeholder="Enter carbohydrates" name="carbs" required />
+                </div>
+                <div class="form-group">
+                    <label for="protein">Protein %:</label>
+                    <input type="number" id="protein" value="" placeholder="Enter protein" name="protein" required />
+                </div>
+                <div class="form-group">
+                    <label for="fat">Fat %:</label>
+                    <input type="number" id="fat" value="" placeholder="Enter fat" name="fat" required />
+                </div>
+                <div class="form-group">
+                    <input type="reset" value="Reset" />
+                </div>
+                <div class="form-group">
+                    <input type="button" value="Calculate Macros" onclick="calcMacros()" id="calc" />
+                </div>
+                <div class="form-group">
+                    <label for="result_carbs">Grams of Carbohydrates:</label>
+                    <input type="text" value="" size="20" placeholder="Result - Grams of Carbs" id="result_carbs" readonly />
+                    <label for="result_protein">Grams of Protein:</label>
+                    <input type="text" value="" size="20" placeholder="Result - Grams of Protein" id="result_protein" readonly />
+                    <label for="result_fat">Grams of Fat:</label>
+                    <input type="text" value="" size="20" placeholder="Result - Grams of Fat" id="result_fat" readonly />
+                </div>
+                <div class="alert" id="alert-message"></div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+        function calcMacros() {
+            var caloriesInput = document.getElementById("calories");
+            var carbsInput = document.getElementById("carbs");
+            var proteinInput = document.getElementById("protein");
+            var fatInput = document.getElementById("fat");
+
+            // Validate input values
+            var calories = parseFloat(caloriesInput.value);
+            var carbsPercentage = parseFloat(carbsInput.value);
+            var proteinPercentage = parseFloat(proteinInput.value);
+            var fatPercentage = parseFloat(fatInput.value);
+
+            // Reset alert message
+            document.getElementById("alert-message").innerText = "";
+
+            if (isNaN(calories) || isNaN(carbsPercentage) || isNaN(proteinPercentage) || isNaN(fatPercentage)) {
+                document.getElementById("alert-message").innerText = "Please enter valid numeric values.";
+                return;
+            }
+
+            // Validate percentage values
+            var totalPercentage = carbsPercentage + proteinPercentage + fatPercentage;
+            if (totalPercentage !== 100) {
+                document.getElementById("alert-message").innerText = "The percentages must add up to 100%.";
+                return;
+            }
+
+            // Calculate grams of macronutrients based on gender
+            var carbsGrams, proteinGrams, fatGrams;
+
+            carbsGrams = (calories * carbsPercentage) / 100 / 4;  // 4 calories per gram of carbohydrates
+            proteinGrams = (calories * proteinPercentage) / 100 / 4;  // 4 calories per gram of protein
+            fatGrams = (calories * fatPercentage) / 100 / 9;  // 9 calories per gram of fat
+
+            // Populate the result fields
+            document.getElementById("result_carbs").value = carbsGrams.toFixed(2);
+            document.getElementById("result_protein").value = proteinGrams.toFixed(2);
+            document.getElementById("result_fat").value = fatGrams.toFixed(2);
+        }
+
+    </script>
+</body>
+</html>
