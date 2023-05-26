@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Exercise Page";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+
+        .exercise {
+            margin-bottom: 50px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .exercise h2 {
+                font-size: 24px;
+                margin-bottom: 15px;
+                color: #333333;
+            }
+
+            .exercise video {
+                display: block;
+                margin: 0 auto 15px;
+                max-width: 100%;
+                height: auto;
+                border: 1px solid #dddddd;
+                border-radius: 5px;
+            }
+
+            .exercise p {
+                font-size: 16px;
+                line-height: 1.5;
+                color: #666666;
+            }
+    </style>
+</head>
+<body>
+    <h1>Exercise Page</h1>
+
+    <div class="exercise">
+        <h2>Bench Press</h2>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4Y2ZdHCOXok" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>
+            Here is a tutorial video for the bench press exercise. Watch the video to learn the proper technique and form for performing the bench press.
+        </p>
+    </div>
+
+    <div class="exercise">
+        <h2>Squat</h2>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/gcNh17Ckjgg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>
+            Here is a tutorial video for the squat exercise. Watch the video to learn the proper technique and form for performing the squat.
+        </p>
+    </div>
+
+    <div class="exercise">
+        <h2>Deadlift</h2>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XxWcirHIwVo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <p>
+            Here is a tutorial video for the deadlift exercise. Watch the video to learn the proper technique and form for performing the deadlift.
+        </p>
+    </div>
+</body>
+</html>
