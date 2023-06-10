@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/FitnessApp_PreslavZlatinov_19621621.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <style>
+        .navbar-nav .nav-item .nav-link {
+            position: relative;
+            z-index: 1;
+        }
+
+            .navbar-nav .nav-item .nav-link:hover::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: deepskyblue; /* Change the color as desired */
+                z-index: -1;
+            }
+    </style>
 </head>
 <body>
     <header>
@@ -31,6 +49,7 @@
                         </li>
                         @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                         {
+
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Workouts" asp-action="Index"> Workouts</a>
                             </li>
