@@ -52,9 +52,6 @@
                                 <a class="btn btn-success text-white" asp-controller="Orders" asp-action="AddItemToShoppingCart" asp-route-id="@item.Id">
                                     <i class="bi bi-cart-plus"></i>Add to Cart (Price @item.Price.ToString("c"))
                                 </a>
-                                <a class="btn btn-danger float-left like-button" onclick="likeButtonClick(this)">
-                                    <i class="bi bi-heart"></i> Like
-                                </a>
                             </p>
                         </div>
                     </div>
@@ -65,16 +62,3 @@
 </div>
 
 @await Html.PartialAsync("_CreateItem", "Workouts")
-
-<script>
-    function likeButtonClick(button) {
-        if (button.classList.contains('liked')) {
-            button.classList.remove('liked');
-            button.style.backgroundColor = '';
-            button.innerHTML = '<i class="bi bi-heart"></i> Like';
-        } else {
-            button.classList.add('liked');
-            button.innerHTML = '<i class="bi bi-heart-fill"></i> Liked';
-        }
-    }
-</script>
