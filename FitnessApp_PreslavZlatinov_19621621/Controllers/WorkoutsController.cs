@@ -40,8 +40,6 @@ namespace FitnessApp_PreslavZlatinov_19621621.Controllers
                 n.Gender.ToString().ToLower().Contains(searchString.ToLower()) || 
                 n.WorkoutExperience.ToString().ToLower().Contains(searchString.ToLower())).ToList();
 
-                //var filteredResult = allWorkouts.Where(n => string.Equals(n.Name, searchString, StringComparison.CurrentCultureIgnoreCase) ||
-                //string.Equals(n.Description, searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
                 return View("Index", filteredResult);
             }
 

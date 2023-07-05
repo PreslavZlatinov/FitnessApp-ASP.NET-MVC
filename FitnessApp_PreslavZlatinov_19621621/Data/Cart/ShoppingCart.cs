@@ -26,16 +26,16 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data.Cart
             return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
 
-        public void AddItemToCart(Workout movie)
+        public void AddItemToCart(Workout workout)
         {
-            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Workout.Id == movie.Id && n.ShoppingCartId == ShoppingCartId);
+            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Workout.Id == workout.Id && n.ShoppingCartId == ShoppingCartId);
 
             if (shoppingCartItem == null)
             {
                 shoppingCartItem = new ShoppingCartItem()
                 {
                     ShoppingCartId = ShoppingCartId,
-                    Workout = movie,
+                    Workout = workout,
                     Amount = 1
                 };
 
@@ -48,9 +48,9 @@ namespace FitnessApp_PreslavZlatinov_19621621.Data.Cart
             _context.SaveChanges();
         }
 
-        public void RemoveItemFromCart(Workout movie)
+        public void RemoveItemFromCart(Workout workout)
         {
-            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Workout.Id == movie.Id && n.ShoppingCartId == ShoppingCartId);
+            var shoppingCartItem = _context.ShoppingCartItems.FirstOrDefault(n => n.Workout.Id == workout.Id && n.ShoppingCartId == ShoppingCartId);
 
             if (shoppingCartItem != null)
             {
